@@ -21,7 +21,7 @@
 	centered={false}
 	title="Commercial insurance that actually makes sense"
 	subtitle="AI-powered matching finds your optimal coverage in minutes, not weeks. No confusing jargon, no excessive fees—just the right protection for your business."
-	imageSrc="/generated/image-a-confident-small-business-owner-mid-30s.webp"
+	imageSrc="/generated/image-1-editorial-lifestyle-photo-of-a-small-b.webp"
 	callsToAction={[
 		{ href: "/contact", label: "Get a quote" },
 		{ href: "/about", label: "How it works" }
@@ -50,7 +50,7 @@
 			company: "Verde Kitchen Supply",
 			quote:
 				"We got our liability and property coverage quote in 20 minutes instead of waiting weeks for broker callbacks. Saved $4,200 annually compared to our old policy, and the AI actually explained what we were buying in plain English.",
-			image: "/generated/image-editorial-lifestyle-headshot-of-a-confid.webp"
+			image: "/generated/image-2-editorial-lifestyle-image-of-a-hispani.webp"
 		},
 		{
 			name: "James Chen",
@@ -58,7 +58,7 @@
 			company: "Precision Auto Body",
 			quote:
 				"After a customer injury scare, I realized our coverage had serious gaps. Their risk analysis caught three exposures my previous broker missed. Now I sleep better knowing we're actually protected, not just paying premiums.",
-			image: "/generated/image-editorial-lifestyle-headshot-of-a-confid.webp"
+			image: "/generated/image-3-editorial-documentary-style-photo-of-a.webp"
 		},
 		{
 			name: "David Thompson",
@@ -66,7 +66,7 @@
 			company: "Thompson & Associates Consulting",
 			quote:
 				"Shopping for professional liability used to mean deciphering dozens of confusing proposals. Their platform compared eight carriers in minutes and highlighted exactly where coverage differed. Closed our policy the same day.",
-			image: "/generated/image-editorial-lifestyle-headshot-of-a-confid.webp"
+			image: "/generated/image-4-editorial-lifestyle-shot-of-a-professi.webp"
 		}
 	]}
 />
@@ -118,7 +118,7 @@
 	title="Ready to protect your business?"
 	subtitle="Get your custom quote in minutes"
 	description="Join thousands of small business owners who've discovered smarter, faster insurance. Our AI analyzes your unique needs and delivers personalized coverage options—no confusing jargon, no hidden fees, no waiting. Start your quote now and see why businesses are making the switch."
-	imageSrc="/generated/image-a-confident-small-business-owner-mid-30s.webp"
+	imageSrc="/generated/image-5-editorial-photo-of-a-business-owner-re.webp"
 	callsToAction={[
 		{ href: "/contact", label: "Get your free quote", variant: "primary" },
 		{ href: "/about", label: "See how it works", variant: "secondary" }
