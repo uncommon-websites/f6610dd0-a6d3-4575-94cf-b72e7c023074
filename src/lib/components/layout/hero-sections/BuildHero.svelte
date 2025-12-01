@@ -74,6 +74,7 @@
 					"h-full w-full object-cover transition-all duration-1000 ease-out",
 					mounted ? "scale-100 opacity-100" : "scale-105 opacity-0"
 				]}
+				style="filter: grayscale(100%); animation: subtleMotion 20s ease-in-out infinite;"
 			/>
 			<!-- Modern gradient overlay with better depth -->
 			<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
@@ -190,6 +191,24 @@
 		50% {
 			transform: translateY(12px);
 			opacity: 0.8;
+		}
+	}
+
+	@keyframes subtleMotion {
+		0% {
+			transform: scale(1) translate(0, 0);
+		}
+		25% {
+			transform: scale(1.05) translate(-1%, -0.5%);
+		}
+		50% {
+			transform: scale(1.08) translate(-2%, -1%);
+		}
+		75% {
+			transform: scale(1.05) translate(-1%, -0.5%);
+		}
+		100% {
+			transform: scale(1) translate(0, 0);
 		}
 	}
 </style>

@@ -1,5 +1,5 @@
 <!-- DO NOT EDIT - Managed by todo_list tool -->
-<!-- Updated: 2025-12-02T21:15:22.710Z -->
+<!-- Updated: 2025-12-03T02:42:52.328Z -->
 
 # Current Todo List State
 
@@ -94,3 +94,8 @@
 - [x] Update the hero section imageSrc to use the new Port of Oakland footage
 - [x] Verify the new background maintains text readability and brand aesthetic
 - [x] Run comprehensive error check and fix all issues
+- [x] Add grayscale filter to the background image
+- [x] Create subtle motion keyframe animation for looping video effect
+- [x] Apply infinite animation to background image
+- [x] Test that mount animation and motion animation work together smoothly
+- [x] Verify text readability is maintained with grayscale background
