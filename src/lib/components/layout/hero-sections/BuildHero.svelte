@@ -32,6 +32,7 @@
 	type Props = {
 		title: string;
 		subtitle: string;
+		imageSrc?: string;
 		callsToAction?: Array<{
 			href: string;
 			label: string;
@@ -42,6 +43,7 @@
 	let {
 		title,
 		subtitle,
+		imageSrc,
 		callsToAction = [cta],
 		...rest
 	}: Props = $props();
@@ -109,6 +111,22 @@
 							{cta.label}
 						</Button>
 					{/each}
+				</div>
+			{/if}
+
+			<!-- Optional Hero Image -->
+			{#if imageSrc}
+				<div
+					class={[
+						"mt-16 transition-all duration-1000 ease-out",
+						mounted ? "translate-y-0 opacity-100 delay-400" : "translate-y-8 opacity-0"
+					]}
+				>
+					<img
+						src={imageSrc}
+						alt="Hero visual"
+						class="mx-auto w-full max-w-5xl rounded-lg border border-border"
+					/>
 				</div>
 			{/if}
 		</div>
