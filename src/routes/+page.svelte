@@ -10,12 +10,24 @@
 </script>
 
 <Hero
-	title="Elevate your business with thoughtful design"
-	subtitle="Solutions that enhance user experience, and improve visual communication."
-	imageSrc="https://www.unc.mn/image-placeholder.svg"
-	generating
+	centered={false}
+	title="Commercial insurance that actually makes sense"
+	subtitle="AI-powered matching finds your optimal coverage in minutes, not weeks. No confusing jargon, no excessive fees—just the right protection for your business."
+	imageSrc="/generated/image-a-confident-small-business-owner-mid-30s.webp"
+	callsToAction={[
+		{ href: "/contact", label: "Get a quote" },
+		{ href: "/about", label: "How it works" }
+	]}
 />
-<LogoScroller label="" generating />
+<LogoScroller
+	label="Trusted by growing businesses"
+	logoUrls={[
+		'https://cdn.brandfetch.io/shopify.com/w/400/h/400/logo',
+		'https://cdn.brandfetch.io/squarespace.com/w/400/h/400/logo',
+		'https://cdn.brandfetch.io/mailchimp.com/w/400/h/400/logo',
+		'https://cdn.brandfetch.io/stripe.com/w/400/h/400/logo'
+	]}
+/>
 
 <Summary
 	generating
