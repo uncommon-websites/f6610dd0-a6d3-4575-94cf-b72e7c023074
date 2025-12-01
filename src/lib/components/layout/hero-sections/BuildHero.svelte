@@ -80,10 +80,10 @@
 		</div>
 	{/if}
 
-	<!-- Company Logo and Name - Top Right Navigation -->
+	<!-- Company Logo and Name - Top Left Navigation -->
 	<div
 		class={[
-			"section-px container absolute top-0 left-0 right-0 z-20 mx-auto flex items-center justify-end py-6 transition-all duration-1000 ease-out",
+			"section-px container absolute top-0 left-0 right-0 z-20 mx-auto flex items-center justify-start py-6 transition-all duration-1000 ease-out",
 			mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
 		]}
 	>
