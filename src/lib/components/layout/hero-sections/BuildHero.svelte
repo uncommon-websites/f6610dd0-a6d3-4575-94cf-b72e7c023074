@@ -80,30 +80,33 @@
 		</div>
 	{/if}
 
+	<!-- Company Logo and Name - Top Right Navigation -->
+	<div
+		class={[
+			"section-px container absolute top-0 left-0 right-0 z-20 mx-auto flex items-center justify-end py-6 transition-all duration-1000 ease-out",
+			mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
+		]}
+	>
+		<div class="flex items-center gap-3">
+			<Logo class={[
+				"size-8 sm:size-10",
+				imageSrc ? "text-white" : ""
+			]} />
+			<span class={[
+				"text-body1 sm:text-title3 font-medium",
+				imageSrc ? "text-white" : ""
+			]}>
+				{CONFIG.companyName}
+			</span>
+		</div>
+	</div>
+
 	<header
 		class="section-px container relative z-10 mx-auto grid min-h-screen place-items-center text-center"
 		style="text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3), 0 8px 40px rgba(0, 0, 0, 0.2);"
 	>
 		<!-- Main Title - Massive Typography with improved hierarchy -->
 		<div class="mx-auto max-w-7xl">
-			<!-- Company Logo and Name -->
-			<div
-				class={[
-					"mb-12 flex items-center justify-center gap-4 transition-all duration-1000 ease-out",
-					mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-				]}
-			>
-				<Logo class={[
-					"size-12 sm:size-16 md:size-20",
-					imageSrc ? "text-white" : ""
-				]} />
-				<span class={[
-					"text-title2 sm:text-title1 font-medium",
-					imageSrc ? "text-white" : ""
-				]}>
-					{CONFIG.companyName}
-				</span>
-			</div>
 
 			<h1
 				class={[
