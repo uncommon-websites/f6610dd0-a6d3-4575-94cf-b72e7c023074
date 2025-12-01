@@ -6,7 +6,7 @@
 	import CallToAction from "$lib/components/layout/CallToAction.svelte";
 	import AboutTeaser from "$lib/components/layout/AboutTeaser.svelte";
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
-	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
+	import BuildHero from "$lib/components/layout/hero-sections/BuildHero.svelte";
 
 	// Icons
 	import IconZap from "~icons/lucide/zap";
@@ -23,11 +23,9 @@
 	import IconTruck from "~icons/lucide/truck";
 </script>
 
-<Hero
-	centered={false}
+<BuildHero
 	title="Commercial insurance that actually makes sense"
 	subtitle="AI-powered matching finds your optimal coverage in minutes, not weeks. No confusing jargon, no excessive fees—just the right protection for your business."
-	imageSrc="/generated/image-1-editorial-lifestyle-photo-of-a-small-b.webp"
 	callsToAction={[
 		{ href: "/contact", label: "Get a quote" },
 		{ href: "/about", label: "How it works" }
