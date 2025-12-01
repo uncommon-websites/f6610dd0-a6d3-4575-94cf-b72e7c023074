@@ -69,31 +69,33 @@
 <div class="" {...rest}>
 	<section class="section-px section-py container mx-auto">
 		<div
-			class="bg-card border-border grid content-start items-center justify-between gap-(--gap) rounded-(--radius) border p-(--gap) text-balance [--gap:--spacing(8)] [--inner-radius:calc(var(--radius)-var(--gap))] [--radius:var(--radius-xl)] lg:grid-cols-[2fr_1fr]"
+			class="bg-card border-border group grid content-start items-center justify-between gap-(--gap) rounded-(--radius) border p-(--gap) text-balance [--gap:--spacing(8)] [--inner-radius:calc(var(--radius)-var(--gap))] [--radius:var(--radius-xl)] lg:grid-cols-[2fr_1fr]"
 		>
-			<div class="items-between grid h-full content-between gap-16">
-				<h2 class="text-title1 mb-3 flex flex-col">
+			<div class="items-between grid h-full content-between gap-20">
+				<h2 class="text-title1 mb-4 flex flex-col">
 					<span><AnimateText text={title} /></span>
 					<span class="text-emphasis-low"><AnimateText text={subtitle} /></span>
 				</h2>
-				<div class="flex flex-col items-start justify-start gap-7">
-					<p class="text-headline text-emphasis-low">
+				<div class="flex flex-col items-start justify-start gap-8">
+					<p class="text-title3 text-emphasis-low leading-relaxed">
 						{description}
 					</p>
-					<div class="flex w-full flex-col gap-2 md:flex-row md:flex-wrap">
+					<div class="flex w-full flex-col gap-3 md:flex-row md:flex-wrap">
 						{#each callsToAction as cta}
-							<Button class="w-full md:w-auto" href={cta.href} variant={cta.variant || "primary"}
+							<Button class="w-full md:w-auto" href={cta.href} variant={cta.variant || "primary"} size="lg"
 								>{cta.label}</Button
 							>
 						{/each}
 					</div>
 				</div>
 			</div>
-			<img
-				src={imageSrc}
-				alt="Visual comparison showing product benefits"
-				class="hidden aspect-[4/5] size-full max-h-full w-full rounded-[calc(max(var(--inner-radius),.25rem))] object-cover lg:block"
-			/>
+			<div class="hidden overflow-hidden rounded-[calc(max(var(--inner-radius),.25rem))] lg:block">
+				<img
+					src={imageSrc}
+					alt="Visual comparison showing product benefits"
+					class="aspect-[4/5] size-full max-h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+				/>
+			</div>
 		</div>
 	</section>
 </div>

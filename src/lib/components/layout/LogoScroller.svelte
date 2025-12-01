@@ -27,7 +27,7 @@
 
 <div
 	data-scroller
-	class="grid place-items-center gap-4 self-end py-4 {label ? 'sm:py-12' : 'sm:py-8'}"
+	class="grid place-items-center gap-6 self-end py-6 {label ? 'sm:py-16' : 'sm:py-12'}"
 	class:!flex={layout === "horizontal"}
 	{...rest}
 	class:dark={mode === "dark"}
@@ -35,20 +35,20 @@
 >
 	{#if label}
 		<p
-			class="body-sm text-emphasis-low whitespace-nowrap"
-			class:mr-2={layout === "horizontal"}
-			class:sm:mr-4={layout === "horizontal"}
+			class="text-callout text-emphasis-low whitespace-nowrap font-medium"
+			class:mr-3={layout === "horizontal"}
+			class:sm:mr-6={layout === "horizontal"}
 		>
 			{label}
 		</p>
 	{/if}
 	<div class="m-auto w-full max-w-prose overflow-hidden">
 		<Marquee
-			class="mask-image text-muted-foreground h-full items-center [--gap:theme(spacing.6)] sm:[--gap:theme(spacing.12)]"
+			class="mask-image text-muted-foreground h-full items-center [--gap:theme(spacing.8)] sm:[--gap:theme(spacing.16)]"
 			speed={paused ? 0 : 0.1}
 		>
 			{#each logoUrls as logo, i}
-				<img src={logo} alt="" class="mx-8 h-5 w-fit object-contain opacity-70 saturate-0" />
+				<img src={logo} alt="" class="mx-10 h-6 w-fit object-contain opacity-60 saturate-0 transition-opacity duration-300 hover:opacity-80" />
 			{/each}
 		</Marquee>
 	</div>

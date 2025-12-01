@@ -143,8 +143,8 @@
 			{#each testimonials as testimonial}
 				<article
 					class={[
-						"lg:container-xs  lg:min-w-[50%] lg:grid-cols-[2fr_3fr]",
-						"items-between grid grid-cols-1 gap-8",
+						"lg:container-xs lg:min-w-[50%] lg:grid-cols-[2fr_3fr]",
+						"items-between grid grid-cols-1 gap-10",
 						"bg-card text-card-foreground",
 						"aspect-video max-w-full min-w-full xl:aspect-[auto]",
 						"transform-gpu transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform",
@@ -159,24 +159,24 @@
 								src={testimonial.image}
 								alt="{testimonial.name} testimonial"
 								loading="lazy"
-								class="aspect-[3/4] h-full w-full object-cover"
+								class="aspect-[3/4] h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
 							/>
 						{/if}
 					</div>
-					<div class="flex flex-col justify-between gap-12">
-						<q class="text-title2 max-w-prose">{testimonial.quote}</q>
-						<cite class="text-caption flex items-center gap-3 not-italic">
+					<div class="flex flex-col justify-between gap-14">
+						<q class="text-title2 max-w-prose leading-relaxed">{testimonial.quote}</q>
+						<cite class="text-caption flex items-center gap-4 not-italic">
 							{#if testimonial.image}
 								<img
 									src={testimonial.image}
 									alt="{testimonial.name} testimonial"
 									loading="lazy"
-									class="size-12 rounded-full object-cover lg:hidden"
+									class="size-14 rounded-full object-cover lg:hidden"
 								/>
 							{/if}
 							<div>
-								<p class="text-callout">{testimonial.name}</p>
-								<p class="text-muted-foreground">
+								<p class="text-callout font-medium">{testimonial.name}</p>
+								<p class="text-muted-foreground mt-1">
 									{testimonial.position}, {testimonial.company}
 								</p>
 							</div>

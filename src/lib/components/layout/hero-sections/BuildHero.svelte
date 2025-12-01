@@ -73,8 +73,8 @@
 					mounted ? "scale-100 opacity-100" : "scale-105 opacity-0"
 				]}
 			/>
-			<!-- Gradient Overlay for Text Readability -->
-			<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+			<!-- Modern gradient overlay with better depth -->
+			<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
 		</div>
 	{/if}
 
@@ -82,16 +82,16 @@
 		class="section-px container relative z-10 mx-auto grid min-h-screen place-items-center text-center"
 		style="text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3), 0 8px 40px rgba(0, 0, 0, 0.2);"
 	>
-		<!-- Main Title - Massive Typography -->
-		<div class="mx-auto max-w-6xl">
+		<!-- Main Title - Massive Typography with improved hierarchy -->
+		<div class="mx-auto max-w-7xl">
 			<h1
 				class={[
 					"font-[450] transition-all duration-1000 ease-out",
-					"text-[2.5rem] leading-[1.05] tracking-[-0.02em]",
-					"sm:text-[3.5rem]",
-					"md:text-[4.5rem]",
-					"lg:text-[5.5rem]",
-					"xl:text-[6.5rem]",
+					"text-[2.75rem] leading-[1.05] tracking-[-0.025em]",
+					"sm:text-[4rem]",
+					"md:text-[5rem]",
+					"lg:text-[6rem]",
+					"xl:text-[7rem]",
 					imageSrc ? "text-white" : "",
 					mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
 				]}
@@ -99,23 +99,23 @@
 				{title}
 			</h1>
 
-			<!-- Subtitle - Clean and Spacious -->
+			<!-- Subtitle - Enhanced readability and spacing -->
 			<p
 				class={[
-					"mx-auto mt-8 max-w-2xl transition-all duration-1000 ease-out",
-					"text-headline md:text-title3",
-					imageSrc ? "text-white/90" : "text-muted-foreground",
+					"mx-auto mt-10 max-w-3xl transition-all duration-1000 ease-out",
+					"text-title3 md:text-title2",
+					imageSrc ? "text-white/95" : "text-muted-foreground",
 					mounted ? "translate-y-0 opacity-100 delay-200" : "translate-y-8 opacity-0"
 				]}
 			>
 				{subtitle}
 			</p>
 
-			<!-- CTAs - Minimal and Confident -->
+			<!-- CTAs - Modern button treatment with better spacing -->
 			{#if callsToAction.length > 0}
 				<div
 					class={[
-						"mt-12 flex flex-wrap items-center justify-center gap-4 transition-all duration-1000 ease-out",
+						"mt-16 flex flex-wrap items-center justify-center gap-4 transition-all duration-1000 ease-out",
 						mounted ? "translate-y-0 opacity-100 delay-300" : "translate-y-8 opacity-0"
 					]}
 				>
@@ -124,7 +124,7 @@
 							href={cta.href}
 							size="lg"
 							variant={index % 2 === 0 ? "primary" : "secondary"}
-							class="min-w-[160px]"
+							class="min-w-[180px]"
 						>
 							{cta.label}
 						</Button>
@@ -133,21 +133,21 @@
 			{/if}
 		</div>
 
-		<!-- Subtle scroll indicator -->
+		<!-- Refined scroll indicator -->
 		<div
 			class={[
 				"absolute bottom-12 left-1/2 -translate-x-1/2 transition-all duration-1000 ease-out",
-				mounted ? "translate-y-0 opacity-30 delay-500" : "translate-y-8 opacity-0"
+				mounted ? "translate-y-0 opacity-40 delay-500" : "translate-y-8 opacity-0"
 			]}
 		>
 			<div class={[
 				"mx-auto h-12 w-6 rounded-full border-2 p-1",
-				imageSrc ? "border-white/30" : "border-muted-foreground/20"
+				imageSrc ? "border-white/40" : "border-muted-foreground/30"
 			]}>
 				<div
 					class={[
 						"h-2 w-2 rounded-full",
-						imageSrc ? "bg-white/60" : "bg-muted-foreground/40"
+						imageSrc ? "bg-white/70" : "bg-muted-foreground/50"
 					]}
 					style="animation: bounce 2s infinite;"
 				></div>
