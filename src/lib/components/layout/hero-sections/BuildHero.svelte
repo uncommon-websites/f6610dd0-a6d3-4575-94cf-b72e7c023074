@@ -80,6 +80,7 @@
 
 	<header
 		class="section-px container relative z-10 mx-auto grid min-h-screen place-items-center text-center"
+		style="text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3), 0 8px 40px rgba(0, 0, 0, 0.2);"
 	>
 		<!-- Main Title - Massive Typography -->
 		<div class="mx-auto max-w-6xl">

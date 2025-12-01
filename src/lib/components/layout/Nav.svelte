@@ -34,10 +34,12 @@
 <div
 	bind:clientHeight={navHeight.current}
 	class={[
-		"sticky top-0 left-0 z-50 border-b backdrop-blur-lg transition",
-		scrollY.current !== 0 ? "border-border bg-background/95" : "bg-background border-transparent"
+		"sticky top-0 left-0 z-50 backdrop-blur-xl transition-all duration-500",
+		scrollY.current !== 0 
+			? "border-b border-white/10 bg-background/60" 
+			: "border-b border-transparent bg-background/40"
 	]}
-	style:--tw-duration="{DURATION}ms"
+	style="box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.05);"
 >
 	<div class="section-px container mx-auto grid grid-cols-[auto_1fr] gap-8 py-3">
 		<a href="/" class="flex items-center gap-3.5">
