@@ -15,6 +15,12 @@
 	import IconShield from "~icons/lucide/shield";
 	import IconArrowLeftRight from "~icons/lucide/arrow-left-right";
 	import IconHeadphones from "~icons/lucide/headphones";
+	import IconUsers from "~icons/lucide/users";
+	import IconBriefcase from "~icons/lucide/briefcase";
+	import IconHome from "~icons/lucide/home";
+	import IconHardHat from "~icons/lucide/hard-hat";
+	import IconLock from "~icons/lucide/lock";
+	import IconTruck from "~icons/lucide/truck";
 </script>
 
 <Hero
@@ -40,6 +46,49 @@
 <Summary
 	title="Why we exist"
 	text="Small business owners shouldn't need an insurance degree to protect what they've built. We analyze your unique risk profile using machine learning and match you with optimal coverage in minutes—eliminating confusing policies, excessive broker fees, and weeks of back-and-forth. It's the clarity and speed you deserve, powered by AI that actually understands your business."
+/>
+
+<Features
+	title="Coverage types for your business"
+	subtitle="Comprehensive protection tailored to small business needs"
+	features={[
+		{
+			title: "General liability",
+			description:
+				"Protects against customer injuries, property damage claims, and advertising injury lawsuits that could threaten your business.",
+			icon: IconUsers
+		},
+		{
+			title: "Professional liability",
+			description:
+				"Covers errors, omissions, and negligence claims from clients who say your services caused them financial harm.",
+			icon: IconBriefcase
+		},
+		{
+			title: "Property insurance",
+			description:
+				"Safeguards your physical assets—buildings, equipment, inventory—from fire, theft, vandalism, and natural disasters.",
+			icon: IconHome
+		},
+		{
+			title: "Workers' compensation",
+			description:
+				"Required in most states, covers medical costs and lost wages when employees get injured or sick on the job.",
+			icon: IconHardHat
+		},
+		{
+			title: "Cyber liability",
+			description:
+				"Protects against data breaches, ransomware attacks, and customer notification costs in our digital-first world.",
+			icon: IconLock
+		},
+		{
+			title: "Commercial auto",
+			description:
+				"Covers vehicles used for business purposes, including liability and physical damage for cars, trucks, and vans.",
+			icon: IconTruck
+		}
+	]}
 />
 
 <Testimonials
