@@ -28,7 +28,7 @@
 	<BuildHero
 		title="Commercial insurance that actually makes sense"
 		subtitle="AI-powered matching finds your optimal coverage in minutes, not weeks. No confusing jargon, no excessive fees—just the right protection for your business."
-		imageSrc="/generated/image-a-modern-city-skyline-at-golden-hour-foc.webp"
+		imageSrc="/generated/image-aerial-drone-view-of-the-port-of-oakland.webp"
 		callsToAction={[
 			{ href: "/contact", label: "Get a quote" },
 			{ href: "/about", label: "How it works" }
