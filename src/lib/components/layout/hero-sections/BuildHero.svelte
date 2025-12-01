@@ -18,6 +18,8 @@
     Props:
     - `title`: Main headline (string) - Keep it bold and impactful
     - `subtitle`: Supporting text (string) - Brief value proposition
+    - `videoSrc`: Background video URL (optional) - Takes priority over imageSrc
+    - `imageSrc`: Background image URL (optional) - Fallback if no video
     - `callsToAction`: CTA buttons array (max two: primary, secondary)
 -->
 
@@ -35,6 +37,7 @@
 		title: string;
 		subtitle: string;
 		imageSrc?: string;
+		videoSrc?: string;
 		callsToAction?: Array<{
 			href: string;
 			label: string;
@@ -46,6 +49,7 @@
 		title,
 		subtitle,
 		imageSrc,
+		videoSrc,
 		callsToAction = [cta],
 		...rest
 	}: Props = $props();
@@ -64,8 +68,26 @@
 </script>
 
 <div class="relative min-h-screen bg-background" {...rest}>
-	{#if imageSrc}
-		<!-- Full Page Background Image -->
+	{#if videoSrc}
+		<!-- Full Page Background Video -->
+		<div class="absolute inset-0">
+			<video
+				src={videoSrc}
+				autoplay
+				muted
+				loop
+				playsinline
+				class={[
+					"h-full w-full object-cover transition-all duration-1000 ease-out",
+					mounted ? "scale-100 opacity-100" : "scale-105 opacity-0"
+				]}
+				style="filter: grayscale(100%);"
+			></video>
+			<!-- Modern gradient overlay with better depth -->
+			<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+		</div>
+	{:else if imageSrc}
+		<!-- Full Page Background Image (fallback) -->
 		<div class="absolute inset-0">
 			<img
 				src={imageSrc}
@@ -91,11 +113,11 @@
 		<div class="flex items-center gap-3">
 			<Logo class={[
 				"size-8 sm:size-10",
-				imageSrc ? "text-white" : ""
+				(videoSrc || imageSrc) ? "text-white" : ""
 			]} />
 			<span class={[
 				"text-body1 sm:text-title3 font-medium",
-				imageSrc ? "text-white" : ""
+				(videoSrc || imageSrc) ? "text-white" : ""
 			]}>
 				{CONFIG.companyName}
 			</span>
@@ -117,7 +139,7 @@
 					"md:text-[5rem]",
 					"lg:text-[6rem]",
 					"xl:text-[7rem]",
-					imageSrc ? "text-white" : "",
+					(videoSrc || imageSrc) ? "text-white" : "",
 					mounted ? "translate-y-0 opacity-100 delay-100" : "translate-y-8 opacity-0"
 				]}
 			>
@@ -129,7 +151,7 @@
 				class={[
 					"mx-auto mt-10 max-w-3xl transition-all duration-1000 ease-out",
 					"text-title3 md:text-title2",
-					imageSrc ? "text-white/95" : "text-muted-foreground",
+					(videoSrc || imageSrc) ? "text-white/95" : "text-muted-foreground",
 					mounted ? "translate-y-0 opacity-100 delay-300" : "translate-y-8 opacity-0"
 				]}
 			>
@@ -167,12 +189,12 @@
 		>
 			<div class={[
 				"mx-auto h-12 w-6 rounded-full border-2 p-1",
-				imageSrc ? "border-white/40" : "border-muted-foreground/30"
+				(videoSrc || imageSrc) ? "border-white/40" : "border-muted-foreground/30"
 			]}>
 				<div
 					class={[
 						"h-2 w-2 rounded-full",
-						imageSrc ? "bg-white/70" : "bg-muted-foreground/50"
+						(videoSrc || imageSrc) ? "bg-white/70" : "bg-muted-foreground/50"
 					]}
 					style="animation: bounce 2s infinite;"
 				></div>
