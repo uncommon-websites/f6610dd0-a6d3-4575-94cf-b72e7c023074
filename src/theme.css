@@ -62,7 +62,7 @@
 
 /* Uncomment this next block for dark mode. Do not remove this line. */
 
-/* html[data-theme="dark"] {
+html[data-theme="dark"] {
 	@theme {
 		--color-background: var(--color-gray-950);
 		--color-foreground: var(--color-gray-50);
@@ -102,4 +102,4 @@
 		--spacing-py: 4rem;
 		--spacing-py-sm: 2rem;
 	}
-} */
+}

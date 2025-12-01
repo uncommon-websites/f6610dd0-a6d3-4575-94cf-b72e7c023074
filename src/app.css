@@ -1,110 +1,49 @@
-/* Do not modify this file, as it is generated. */
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 @import "./base.css";
 @import "./typography.css";
 @import "./spacing.css";
-
-@theme inline {
-	/* Theming */
-	--color-background: oklch(1 0 0);
-	--color-foreground: var(--color-gray-950);
-
-	--color-card: var(--color-gray-50);
-	--color-card-foreground: var(--color-gray-950);
-	--color-card-hover: var(--color-gray-100);
-
-	--color-popover: oklch(1 0 0);
-	--color-popover-foreground: var(--color-gray-950);
-
-	--color-primary: var(--color-primary-600);
-	--color-primary-foreground: var(--color-primary-50);
-
-	--color-secondary: var(--color-secondary-100);
-	--color-secondary-foreground: var(--color-secondary-900);
-
-	--color-muted: var(--color-gray-100);
-	--color-muted-foreground: var(--color-gray-500);
-
-	--color-accent: var(--color-gray-100);
-	--color-accent-foreground: var(--color-gray-900);
-
-	--color-destructive: color-mix(in oklch, var(--color-primary-500), var(--color-secondary-500));
-
-	--color-border: var(--color-gray-100);
-	--color-input: var(--color-gray-100);
-	--color-ring: var(--color-primary-600);
-
-	--color-chart-1: color-mix(in oklch, var(--color-primary-600), var(--color-secondary-500));
-	--color-chart-2: color-mix(in oklch, var(--color-primary-500), var(--color-secondary-600));
-	--color-chart-3: color-mix(in oklch, var(--color-primary-400), var(--color-secondary-400));
-	--color-chart-4: color-mix(in oklch, var(--color-primary-700), var(--color-secondary-300));
-	--color-chart-5: color-mix(in oklch, var(--color-primary-600), var(--color-secondary-400));
-
-	--color-sidebar: var(--color-gray-50);
-	--color-sidebar-foreground: var(--color-gray-950);
-	--color-sidebar-primary: var(--color-primary-600);
-	--color-sidebar-primary-foreground: var(--color-primary-50);
-	--color-sidebar-accent: var(--color-gray-100);
-	--color-sidebar-accent-foreground: var(--color-gray-900);
-	--color-sidebar-border: var(--color-gray-200);
-	--color-sidebar-ring: var(--color-primary-600);
-
-	/* ALWAYS use REMs */
-	--radius: 0.5rem !important;
-	--radius-xs: calc(var(--radius) / 4);
-	--radius-sm: calc(var(--radius) / 2);
-	--radius-md: calc(var(--radius) / 1.5);
-	--radius-lg: calc(var(--radius) * 1.5);
-	--radius-xl: calc(var(--radius) * 2);
-	--radius-2xl: calc(var(--radius) * 3);
-	--radius-3xl: calc(var(--radius) * 4);
-	--radius-4xl: calc(var(--radius) * 5);
-
-	/* Spacing system - based on section spacing but available as CSS variables */
-	--spacing-px: 1rem; /* Base px equivalent for md+ */
-	--spacing-py: 4rem; /* Base py equivalent for md+ */
-	--spacing-py-sm: 2rem; /* Small py equivalent for md+ */
-}
+@import "./theme.css";
 
 @theme {
-	/* Colors */
-	--color-gray-50: oklch(0.985 0.001 106.423);
-	--color-gray-100: oklch(0.97 0.001 106.424);
-	--color-gray-200: oklch(0.923 0.003 48.717);
-	--color-gray-300: oklch(0.869 0.005 56.366);
-	--color-gray-400: oklch(0.709 0.01 56.259);
-	--color-gray-500: oklch(0.553 0.013 58.071);
-	--color-gray-600: oklch(0.444 0.011 73.639);
-	--color-gray-700: oklch(0.374 0.01 67.558);
-	--color-gray-800: oklch(0.268 0.007 34.298);
-	--color-gray-900: oklch(0.216 0.006 56.043);
-	--color-gray-950: oklch(0.147 0.004 49.25);
+/* Colors */
+--color-gray-50: oklch(0.985 0.001 106.423);
+--color-gray-100: oklch(0.97 0.001 106.424);
+--color-gray-200: oklch(0.923 0.003 48.717);
+--color-gray-300: oklch(0.869 0.005 56.366);
+--color-gray-400: oklch(0.709 0.01 56.259);
+--color-gray-500: oklch(0.553 0.013 58.071);
+--color-gray-600: oklch(0.444 0.011 73.639);
+--color-gray-700: oklch(0.374 0.01 67.558);
+--color-gray-800: oklch(0.268 0.007 34.298);
+--color-gray-900: oklch(0.216 0.006 56.043);
+--color-gray-950: oklch(0.147 0.004 49.25);
+--color-primary-50: oklch(0.962 0.018 272.314);
+--color-primary-100: oklch(0.93 0.034 272.788);
+--color-primary-200: oklch(0.87 0.065 274.039);
+--color-primary-300: oklch(0.785 0.115 274.713);
+--color-primary-400: oklch(0.673 0.182 276.935);
+--color-primary-500: oklch(0.585 0.233 277.117);
+--color-primary-600: oklch(0.511 0.262 276.966);
+--color-primary-700: oklch(0.457 0.24 277.023);
+--color-primary-800: oklch(0.398 0.195 277.366);
+--color-primary-900: oklch(0.359 0.144 278.697);
+--color-primary-950: oklch(0.257 0.09 281.288);
+--color-secondary-50: oklch(0.95 0.08 340);
+--color-secondary-100: oklch(0.88 0.12 340);
+--color-secondary-200: oklch(0.78 0.16 340);
+--color-secondary-300: oklch(0.72 0.2 340);
+--color-secondary-400: oklch(0.66 0.24 340);
+--color-secondary-500: oklch(0.6 0.28 340);
+--color-secondary-600: oklch(0.54 0.28 340);
+--color-secondary-700: oklch(0.48 0.24 340);
+--color-secondary-800: oklch(0.38 0.2 340);
+--color-secondary-900: oklch(0.28 0.16 340);
+--color-secondary-950: oklch(0.18 0.12 340);
 
-	--color-primary-50: oklch(0.982 0.018 155.826);
-	--color-primary-100: oklch(0.962 0.044 156.743);
-	--color-primary-200: oklch(0.925 0.084 155.995);
-	--color-primary-300: oklch(0.871 0.15 154.449);
-	--color-primary-400: oklch(0.792 0.209 151.711);
-	--color-primary-500: oklch(0.723 0.219 149.579);
-	--color-primary-600: oklch(0.627 0.194 149.214);
-	--color-primary-700: oklch(0.527 0.154 150.069);
-	--color-primary-800: oklch(0.448 0.119 151.328);
-	--color-primary-900: oklch(0.393 0.095 152.535);
-	--color-primary-950: oklch(0.266 0.065 152.934);
-
-	--color-secondary-50: oklch(97% 0.015 30);
-	--color-secondary-100: oklch(92% 0.02 30);
-	--color-secondary-200: oklch(86% 0.03 30);
-	--color-secondary-300: oklch(80% 0.04 30);
-	--color-secondary-400: oklch(74% 0.05 30);
-	--color-secondary-500: oklch(68% 0.06 30);
-	--color-secondary-600: oklch(60% 0.07 30);
-	--color-secondary-700: oklch(52% 0.08 30);
-	--color-secondary-800: oklch(40% 0.09 30);
-	--color-secondary-900: oklch(30% 0.1 30);
-	--color-secondary-950: oklch(20% 0.11 30);
-
-	--font-body: var(--font-family), var(--font-fallback);
-	--font-display: var(--font-body);
+/* Typography */
+--font-family: "Inter";
+--font-fallback: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+--font-body: var(--font-family), var(--font-fallback);
+--font-display: var(--font-body);
 }
