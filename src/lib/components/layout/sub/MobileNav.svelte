@@ -12,7 +12,7 @@
 	import { beforeNavigate } from "$app/navigation";
 
 	// Props
-	const { items = [] }: { items: typeof navigation } = $props();
+	const { items = [], isAtTop = false }: { items: typeof navigation; isAtTop?: boolean } = $props();
 
 	// State
 	let isMenuOpen = $state(false);
@@ -115,7 +115,10 @@
 	</div>
 </div>
 
-<div class="flex items-center justify-end gap-2">
+<div class={[
+	"flex items-center justify-end gap-2 transition-colors duration-500",
+	isAtTop ? "text-white" : ""
+]}>
 	<Button size="sm" variant="secondary" href={cta.href}>{cta.label}</Button>
 
 	<Button

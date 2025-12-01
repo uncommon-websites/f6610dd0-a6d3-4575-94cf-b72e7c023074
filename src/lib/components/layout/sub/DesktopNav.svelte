@@ -1,6 +1,7 @@
 <script lang="ts">
 	type Props = {
 		items: typeof navigation;
+		isAtTop?: boolean;
 	};
 
 	// Components
@@ -12,11 +13,14 @@
 	import { cta, navigation } from "$lib/navigation";
 
 	// Props
-	const { items }: Props = $props();
+	const { items, isAtTop = false }: Props = $props();
 </script>
 
-<div class="relative flex items-center justify-end gap-5">
-	<NavigationMenu.Root class="text-foreground relative z-10 flex justify-end">
+<div class={[
+	"relative flex items-center justify-end gap-5 transition-colors duration-500",
+	isAtTop ? "text-white" : ""
+]}>
+	<NavigationMenu.Root class="relative z-10 flex justify-end">
 		<NavigationMenu.List class="group flex list-none items-center justify-center gap-5 p-1">
 			{#each items as item}
 				<NavigationMenu.Item

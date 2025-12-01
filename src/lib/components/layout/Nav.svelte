@@ -34,15 +34,18 @@
 <div
 	bind:clientHeight={navHeight.current}
 	class={[
-		"sticky top-0 left-0 z-50 backdrop-blur-xl transition-all duration-500",
+		"sticky top-0 left-0 z-50 backdrop-blur-md transition-all duration-500",
 		scrollY.current !== 0 
-			? "border-b border-white/10 bg-background/60" 
-			: "border-b border-transparent bg-background/40"
+			? "border-b border-white/10 bg-background/80" 
+			: "border-b border-transparent bg-transparent"
 	]}
-	style="box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.05);"
+	style={scrollY.current !== 0 ? "box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.05);" : ""}
 >
 	<div class="section-px container mx-auto grid grid-cols-[auto_1fr] gap-8 py-3">
-		<a href="/" class="flex items-center gap-3.5">
+		<a href="/" class={[
+			"flex items-center gap-3.5 transition-colors duration-500",
+			scrollY.current === 0 ? "text-white" : ""
+		]}>
 			<Logo class="z-50 size-7" />
 
 			<span class="font-medium">{CONFIG.companyName}</span>
@@ -52,11 +55,11 @@
 		<div class="">
 			{#if mobile?.current}
 				<div class="lg:hidden">
-					<MobileNav items={navItems} />
+					<MobileNav items={navItems} isAtTop={scrollY.current === 0} />
 				</div>
 			{:else}
 				<div class="hidden lg:block">
-					<DesktopNav items={navItems} />
+					<DesktopNav items={navItems} isAtTop={scrollY.current === 0} />
 				</div>
 			{/if}
 		</div>
