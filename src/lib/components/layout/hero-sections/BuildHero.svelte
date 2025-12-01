@@ -61,10 +61,25 @@
 	});
 </script>
 
-<div class="bg-background" {...rest}>
+<div class="relative min-h-screen bg-background" {...rest}>
+	{#if imageSrc}
+		<!-- Full Page Background Image -->
+		<div class="absolute inset-0">
+			<img
+				src={imageSrc}
+				alt="Hero visual"
+				class={[
+					"h-full w-full object-cover transition-all duration-1000 ease-out",
+					mounted ? "scale-100 opacity-100" : "scale-105 opacity-0"
+				]}
+			/>
+			<!-- Gradient Overlay for Text Readability -->
+			<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+		</div>
+	{/if}
+
 	<header
-		class="section-px container mx-auto grid place-items-center text-center"
-		style="padding-top: clamp(6rem, 12vw, 10rem); padding-bottom: clamp(6rem, 12vw, 10rem);"
+		class="section-px container relative z-10 mx-auto grid min-h-screen place-items-center text-center"
 	>
 		<!-- Main Title - Massive Typography -->
 		<div class="mx-auto max-w-6xl">
@@ -76,6 +91,7 @@
 					"md:text-[4.5rem]",
 					"lg:text-[5.5rem]",
 					"xl:text-[6.5rem]",
+					imageSrc ? "text-white" : "",
 					mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
 				]}
 			>
@@ -85,8 +101,9 @@
 			<!-- Subtitle - Clean and Spacious -->
 			<p
 				class={[
-					"text-muted-foreground mx-auto mt-8 max-w-2xl transition-all duration-1000 ease-out",
+					"mx-auto mt-8 max-w-2xl transition-all duration-1000 ease-out",
 					"text-headline md:text-title3",
+					imageSrc ? "text-white/90" : "text-muted-foreground",
 					mounted ? "translate-y-0 opacity-100 delay-200" : "translate-y-8 opacity-0"
 				]}
 			>
@@ -113,34 +130,24 @@
 					{/each}
 				</div>
 			{/if}
-
-			<!-- Optional Hero Image -->
-			{#if imageSrc}
-				<div
-					class={[
-						"mt-16 transition-all duration-1000 ease-out",
-						mounted ? "translate-y-0 opacity-100 delay-400" : "translate-y-8 opacity-0"
-					]}
-				>
-					<img
-						src={imageSrc}
-						alt="Hero visual"
-						class="mx-auto w-full max-w-5xl rounded-lg border border-border"
-					/>
-				</div>
-			{/if}
 		</div>
 
 		<!-- Subtle scroll indicator -->
 		<div
 			class={[
-				"mt-24 transition-all duration-1000 ease-out",
+				"absolute bottom-12 left-1/2 -translate-x-1/2 transition-all duration-1000 ease-out",
 				mounted ? "translate-y-0 opacity-30 delay-500" : "translate-y-8 opacity-0"
 			]}
 		>
-			<div class="mx-auto h-12 w-6 rounded-full border-2 border-muted-foreground/20 p-1">
+			<div class={[
+				"mx-auto h-12 w-6 rounded-full border-2 p-1",
+				imageSrc ? "border-white/30" : "border-muted-foreground/20"
+			]}>
 				<div
-					class="animate-bounce-slow h-2 w-2 rounded-full bg-muted-foreground/40"
+					class={[
+						"h-2 w-2 rounded-full",
+						imageSrc ? "bg-white/60" : "bg-muted-foreground/40"
+					]}
 					style="animation: bounce 2s infinite;"
 				></div>
 			</div>
