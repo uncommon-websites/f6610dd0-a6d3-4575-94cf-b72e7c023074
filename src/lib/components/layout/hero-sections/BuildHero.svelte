@@ -24,9 +24,11 @@
 <script lang="ts">
 	// Components
 	import Button from "$lib/components/ui/Button.svelte";
+	import Logo from "$lib/components/Logo.svelte";
 
 	// Constants
 	import { cta } from "$lib/navigation";
+	import { CONFIG } from "$lib/content";
 
 	// Types
 	type Props = {
@@ -84,6 +86,25 @@
 	>
 		<!-- Main Title - Massive Typography with improved hierarchy -->
 		<div class="mx-auto max-w-7xl">
+			<!-- Company Logo and Name -->
+			<div
+				class={[
+					"mb-12 flex items-center justify-center gap-4 transition-all duration-1000 ease-out",
+					mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+				]}
+			>
+				<Logo class={[
+					"size-12 sm:size-16 md:size-20",
+					imageSrc ? "text-white" : ""
+				]} />
+				<span class={[
+					"text-title2 sm:text-title1 font-medium",
+					imageSrc ? "text-white" : ""
+				]}>
+					{CONFIG.companyName}
+				</span>
+			</div>
+
 			<h1
 				class={[
 					"font-[450] transition-all duration-1000 ease-out",
@@ -93,7 +114,7 @@
 					"lg:text-[6rem]",
 					"xl:text-[7rem]",
 					imageSrc ? "text-white" : "",
-					mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+					mounted ? "translate-y-0 opacity-100 delay-100" : "translate-y-8 opacity-0"
 				]}
 			>
 				{title}
@@ -105,7 +126,7 @@
 					"mx-auto mt-10 max-w-3xl transition-all duration-1000 ease-out",
 					"text-title3 md:text-title2",
 					imageSrc ? "text-white/95" : "text-muted-foreground",
-					mounted ? "translate-y-0 opacity-100 delay-200" : "translate-y-8 opacity-0"
+					mounted ? "translate-y-0 opacity-100 delay-300" : "translate-y-8 opacity-0"
 				]}
 			>
 				{subtitle}
@@ -116,7 +137,7 @@
 				<div
 					class={[
 						"mt-16 flex flex-wrap items-center justify-center gap-4 transition-all duration-1000 ease-out",
-						mounted ? "translate-y-0 opacity-100 delay-300" : "translate-y-8 opacity-0"
+						mounted ? "translate-y-0 opacity-100 delay-[400ms]" : "translate-y-8 opacity-0"
 					]}
 				>
 					{#each callsToAction as cta, index}
