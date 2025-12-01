@@ -37,6 +37,7 @@
 		title: string;
 		subtitle: string;
 		imageSrc?: string;
+		imageSrcs?: string[];
 		videoSrc?: string;
 		callsToAction?: Array<{
 			href: string;
@@ -49,6 +50,7 @@
 		title,
 		subtitle,
 		imageSrc,
+		imageSrcs,
 		videoSrc,
 		callsToAction = [cta],
 		...rest
@@ -56,6 +58,11 @@
 
 	// Animation state
 	let mounted = $state(false);
+	let currentImageIndex = $state(0);
+
+	// Determine which images to use
+	const images = $derived(imageSrcs && imageSrcs.length > 0 ? imageSrcs : (imageSrc ? [imageSrc] : []));
+	const hasMultipleImages = $derived(images.length > 1);
 
 	// Mount animation
 	$effect(() => {
@@ -64,6 +71,17 @@
 		}, 100);
 
 		return () => clearTimeout(timer);
+	});
+
+	// Image cycling effect
+	$effect(() => {
+		if (!hasMultipleImages) return;
+
+		const interval = setInterval(() => {
+			currentImageIndex = (currentImageIndex + 1) % images.length;
+		}, 5000); // Change image every 5 seconds
+
+		return () => clearInterval(interval);
 	});
 </script>
 
@@ -86,18 +104,21 @@
 			<!-- Modern gradient overlay with better depth -->
 			<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
 		</div>
-	{:else if imageSrc}
-		<!-- Full Page Background Image (fallback) -->
+	{:else if images.length > 0}
+		<!-- Full Page Background Image(s) -->
 		<div class="absolute inset-0">
-			<img
-				src={imageSrc}
-				alt="Hero visual"
-				class={[
-					"h-full w-full object-cover transition-all duration-1000 ease-out",
-					mounted ? "scale-100 opacity-100" : "scale-105 opacity-0"
-				]}
-				style="filter: grayscale(100%); animation: subtleMotion 20s ease-in-out infinite;"
-			/>
+			{#each images as image, index}
+				<img
+					src={image}
+					alt="Hero visual {index + 1}"
+					class={[
+						"absolute inset-0 h-full w-full object-cover transition-all duration-1000 ease-out",
+						mounted ? "scale-100" : "scale-105",
+						currentImageIndex === index ? "opacity-100" : "opacity-0"
+					]}
+					style="filter: grayscale(100%); animation: subtleMotion 20s ease-in-out infinite;"
+				/>
+			{/each}
 			<!-- Modern gradient overlay with better depth -->
 			<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
 		</div>
@@ -113,11 +134,11 @@
 		<div class="flex items-center gap-3">
 			<Logo class={[
 				"size-8 sm:size-10",
-				(videoSrc || imageSrc) ? "text-white" : ""
+				(videoSrc || images.length > 0) ? "text-white" : ""
 			]} />
 			<span class={[
 				"text-body1 sm:text-title3 font-medium",
-				(videoSrc || imageSrc) ? "text-white" : ""
+				(videoSrc || images.length > 0) ? "text-white" : ""
 			]}>
 				{CONFIG.companyName}
 			</span>
@@ -139,7 +160,7 @@
 					"md:text-[5rem]",
 					"lg:text-[6rem]",
 					"xl:text-[7rem]",
-					(videoSrc || imageSrc) ? "text-white" : "",
+					(videoSrc || images.length > 0) ? "text-white" : "",
 					mounted ? "translate-y-0 opacity-100 delay-100" : "translate-y-8 opacity-0"
 				]}
 			>
@@ -151,7 +172,7 @@
 				class={[
 					"mx-auto mt-10 max-w-3xl transition-all duration-1000 ease-out",
 					"text-title3 md:text-title2",
-					(videoSrc || imageSrc) ? "text-white/95" : "text-muted-foreground",
+					(videoSrc || images.length > 0) ? "text-white/95" : "text-muted-foreground",
 					mounted ? "translate-y-0 opacity-100 delay-300" : "translate-y-8 opacity-0"
 				]}
 			>
@@ -189,12 +210,12 @@
 		>
 			<div class={[
 				"mx-auto h-12 w-6 rounded-full border-2 p-1",
-				(videoSrc || imageSrc) ? "border-white/40" : "border-muted-foreground/30"
+				(videoSrc || images.length > 0) ? "border-white/40" : "border-muted-foreground/30"
 			]}>
 				<div
 					class={[
 						"h-2 w-2 rounded-full",
-						(videoSrc || imageSrc) ? "bg-white/70" : "bg-muted-foreground/50"
+						(videoSrc || images.length > 0) ? "bg-white/70" : "bg-muted-foreground/50"
 					]}
 					style="animation: bounce 2s infinite;"
 				></div>
