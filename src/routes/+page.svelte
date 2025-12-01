@@ -7,6 +7,14 @@
 	import AboutTeaser from "$lib/components/layout/AboutTeaser.svelte";
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
 	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
+
+	// Icons
+	import IconZap from "~icons/lucide/zap";
+	import IconDollarSign from "~icons/lucide/dollar-sign";
+	import IconFileText from "~icons/lucide/file-text";
+	import IconShield from "~icons/lucide/shield";
+	import IconArrowLeftRight from "~icons/lucide/arrow-left-right";
+	import IconHeadphones from "~icons/lucide/headphones";
 </script>
 
 <Hero
@@ -30,62 +38,89 @@
 />
 
 <Summary
-	generating
-	title="What we do"
-	text="Our technology delivers measurable results through secure, adaptable solutions that directly increase productivity and drive growth."
+	title="Why we exist"
+	text="Small business owners shouldn't need an insurance degree to protect what they've built. We analyze your unique risk profile using machine learning and match you with optimal coverage in minutes—eliminating confusing policies, excessive broker fees, and weeks of back-and-forth. It's the clarity and speed you deserve, powered by AI that actually understands your business."
 />
 
 <Testimonials
-	generating
 	testimonials={[
 		{
-			name: "Jane Smith",
-			position: "CTO",
-			company: "Tech Innovations",
+			name: "Maria Rodriguez",
+			position: "Owner",
+			company: "Verde Kitchen Supply",
 			quote:
-				"Their cutting-edge automation boosted our productivity by 35%.\nThe intuitive interface reduced training time and improved team adoption.",
-			image: "https://www.unc.mn/image-placeholder.svg"
+				"We got our liability and property coverage quote in 20 minutes instead of waiting weeks for broker callbacks. Saved $4,200 annually compared to our old policy, and the AI actually explained what we were buying in plain English.",
+			image: "/generated/image-editorial-lifestyle-headshot-of-a-confid.webp"
 		},
 		{
-			name: "John Doe",
-			position: "Director of Operations",
-			company: "Global Solutions",
+			name: "James Chen",
+			position: "Founder",
+			company: "Precision Auto Body",
 			quote:
-				"Their robust security protocols gave us confidence in handling sensitive data.\nThe 24/7 support team resolved issues within hours, not days.",
-			image: "https://www.unc.mn/image-placeholder.svg"
+				"After a customer injury scare, I realized our coverage had serious gaps. Their risk analysis caught three exposures my previous broker missed. Now I sleep better knowing we're actually protected, not just paying premiums.",
+			image: "/generated/image-editorial-lifestyle-headshot-of-a-confid.webp"
 		},
 		{
-			name: "Sarah Johnson",
-			position: "Product Manager",
-			company: "Future Systems",
+			name: "David Thompson",
+			position: "Managing Partner",
+			company: "Thompson & Associates Consulting",
 			quote:
-				"The scalable platform grew seamlessly with our business needs.\nTheir customization options allowed us to tailor solutions perfectly to our workflows.",
-			image: "https://www.unc.mn/image-placeholder.svg"
+				"Shopping for professional liability used to mean deciphering dozens of confusing proposals. Their platform compared eight carriers in minutes and highlighted exactly where coverage differed. Closed our policy the same day.",
+			image: "/generated/image-editorial-lifestyle-headshot-of-a-confid.webp"
 		}
 	]}
 />
 
 <Features
-	generating
-	title="Features"
-	subtitle="Some features"
+	title="Coverage made simple"
+	subtitle="Get the protection your business needs without the headaches that usually come with it"
 	features={[
 		{
-			title: "Streamlined Workflows",
+			title: "Instant AI matching",
 			description:
-				"Automate repetitive tasks and connect systems to improve productivity with our industry-leading 87% time savings."
+				"Our machine learning analyzes your business profile and matches you with optimal coverage in minutes. No more waiting weeks for broker callbacks or wading through irrelevant policies.",
+			icon: IconZap
 		},
 		{
-			title: "Data Analysis",
+			title: "Transparent pricing",
 			description:
-				"Extract meaningful insights from your data with powerful analytical tools backed by proprietary AI algorithms that are 3x more accurate than competitors."
+				"See exactly what you're paying for with clear breakdowns and no hidden fees. We save small businesses an average of 30% compared to traditional brokers.",
+			icon: IconDollarSign
 		},
 		{
-			title: "Secure Collaboration",
+			title: "Plain English policies",
 			description:
-				"Work together seamlessly while maintaining strict data privacy standards with our zero-knowledge architecture and military-grade encryption."
+				"Insurance shouldn't require a law degree to understand. We translate complex insurance jargon into clear language so you know exactly what's covered.",
+			icon: IconFileText
+		},
+		{
+			title: "Smart risk analysis",
+			description:
+				"Our AI evaluates your specific business risks and recommends coverage tailored to your industry. Get protection that actually fits your needs, not a one-size-fits-all package.",
+			icon: IconShield
+		},
+		{
+			title: "One-click comparisons",
+			description:
+				"Compare multiple insurance options side-by-side with clear pros and cons. Make informed decisions without spreadsheets or confusion.",
+			icon: IconArrowLeftRight
+		},
+		{
+			title: "Human support when needed",
+			description:
+				"AI handles the heavy lifting, but licensed insurance experts are available whenever you need guidance. Get the best of automation and human expertise.",
+			icon: IconHeadphones
 		}
 	]}
 />
-<AboutTeaser generating />
-<CallToAction generating />
+<AboutTeaser />
+<CallToAction 
+	title="Ready to protect your business?"
+	subtitle="Get your custom quote in minutes"
+	description="Join thousands of small business owners who've discovered smarter, faster insurance. Our AI analyzes your unique needs and delivers personalized coverage options—no confusing jargon, no hidden fees, no waiting. Start your quote now and see why businesses are making the switch."
+	imageSrc="/generated/image-a-confident-small-business-owner-mid-30s.webp"
+	callsToAction={[
+		{ href: "/contact", label: "Get your free quote", variant: "primary" },
+		{ href: "/about", label: "See how it works", variant: "secondary" }
+	]}
+/>
